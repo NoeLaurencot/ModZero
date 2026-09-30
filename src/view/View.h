@@ -13,11 +13,13 @@ class View : QObject {
     Q_OBJECT
 
 public:
-    explicit View(Model &model);
+    explicit View(Model &model, QWidget *mainWindow = nullptr);
 
     Model &getModel() const;
 
     QWidget *getMainWindow() const;
+
+    void setMainWindow(QWidget *window);
 
     void initWidgets();
 
