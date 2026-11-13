@@ -9,15 +9,15 @@
 #include "../model/Model.h"
 
 
-class View : QObject {
+class View : public QObject {
     Q_OBJECT
 
 public:
     explicit View(Model &model);
 
-    Model &getModel() const;
+    Model const &getModel() const;
 
-    QWidget *getMainWindow() const;
+    QWidget const *getMainWindow() const;
 
     void initWidgets();
 

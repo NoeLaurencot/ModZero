@@ -9,13 +9,13 @@
 #include "../model/Model.h"
 #include "../view/View.h"
 
-class Controller : QObject {
+class Controller : public QObject {
 public:
     Controller(Model &model, View &view);
     ~Controller() override = default;
 
-    Model &getModel() const;
-    Model &getView() const;
+    Model const &getModel() const;
+    Model const &getView() const;
 private:
     Model &model;
     View &view;

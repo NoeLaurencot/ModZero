@@ -6,13 +6,18 @@
 #define MODZERO_MODEL_H
 #include <qobject.h>
 
-class Model : QObject{
+class Model : public QObject {
 public:
     Model() = default;
+
+    explicit Model(std::string &modFolderPath);
+
     ~Model() override = default;
 
     void initModel();
+
 private:
+    std::string modFolderPath;
 };
 
 #endif //MODZERO_MODEL_H
